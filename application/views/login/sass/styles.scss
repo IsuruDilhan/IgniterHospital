@@ -1,0 +1,195 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700);
+$tintone: #3F51B5;
+$tinttwo: #3F51B5;
+$greytone: #ddd;
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: #f9f9f9;
+    background-image: url('../images/background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-font-smoothing: antialiased;
+    .custom-container {
+        max-width: 390px;
+        margin-top: 8vw;
+        form.form {
+            margin: 0 20px 20px;
+        }
+        .panel-default {
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.1), 0 16px 20px -8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.1), 0 24px 38px -16px rgba(0, 0, 0, 0.2);
+            // background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(246, 246, 246, 0.95));
+            background-color: white;
+            border: none;
+            padding: 14px;
+            padding-top: 40px;
+            border-radius: 2px;
+            h3 {
+                color: $tintone;
+                font-weight: 400;
+                i.fa {
+                    color: #ddd;
+                }
+            }
+            p {
+                a {
+                    transition: all 200ms ease-in-out;
+                    color: $tintone;
+                    &:hover {
+                        text-decoration: none;
+                        opacity: 0.5;
+                    }
+                }
+            }
+            .form-group {
+                position: relative;
+                .material-input {
+                    box-shadow: none;
+                    border: none;
+                    border-bottom: 1px solid $greytone;
+                    font-size: 16px;
+                    height: 60px;
+                    font-weight: 400;
+                    border-radius: 0px;
+                    color: #333;
+                    transition: all .2s ease;
+                    padding-top: 19px;
+                    padding-left: 6px;
+                    background-color: transparent;
+                    &:focus {
+                        // border-bottom: 2px solid;
+                        border-color: $tintone;
+                        color: #333;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                .placeholder {
+                    position: absolute;
+                    top: 27px;
+                    left: 5px;
+                    transition: all .1s ease-in-out;
+                    color: $greytone;
+                    transform: translate3d(0, 0, 0);
+                    font-size: 16px;
+                    pointer-events: none;
+                    font-weight: 400;
+                    &.focus {
+                        font-size: 12px;
+                        top: 2px;
+                        left: 5px;
+                        color: $tintone;
+                    }
+                }
+                .bottom-liner {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 2px;
+                    margin: 0 auto;
+                    width: 0%;
+                    background-color: $tintone;
+                    transition: all .2s ease-in-out;
+                    &.lined {
+                        width: 100%;
+                    }
+                }
+                .highlight {
+                    height: 21px;
+                    background-color: $tintone;
+                    position: absolute;
+                    left: 5px;
+                    bottom: 13px;
+                    transition: all .15s ease-in-out;
+                    opacity: 0;
+                    width: 70%;
+                    pointer-events: none;
+                    background: -moz-linear-gradient(left, $tintone 0%, rgba(255, 255, 255, 0) 100%);
+                    background: -webkit-gradient(linear, left top, right top, color-stop(0%, $tintone), color-stop(100%, rgba(255, 255, 255, 0)));
+                    background: -webkit-linear-gradient(left, $tintone 0%, rgba(255, 255, 255, 0) 100%);
+                    background: -o-linear-gradient(left, $tintone 0%, rgba(255, 255, 255, 0) 100%);
+                    background: -ms-linear-gradient(left, $tintone 0%, rgba(255, 255, 255, 0) 100%);
+                    background: linear-gradient(to right, $tintone 0%, rgba(255, 255, 255, 0) 100%);
+                    &.light {
+                        width: 0%;
+                        opacity: .3;
+                    }
+                    &.no-light {
+                        opacity: 0 !important;
+                        width: 0 !important;
+                    }
+                }
+            }
+        }
+        .btn-custom {
+            background-color: $tinttwo;
+            border: none;
+            color: white;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.2s;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+            border-radius: 2px;
+            padding: 10px 0px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            margin: 0 auto;
+            outline: none !important;
+            position: relative;
+            overflow: hidden;
+            &.not-visible {
+                opacity: 0;
+                transform: translateY(10px);
+                color: transparent;
+            }
+            &:hover {
+                transition-delay: 0s;
+                box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+                background-color: lighten($tinttwo, 5%);
+                border-color: lighten($tinttwo, 5%);
+            }
+            &:active {
+                transform: scale(0.98);
+            }
+            .ripple-svg {
+                position: absolute;
+                left: 0;
+                top: 0;
+                .circle {
+                    opacity: 0.3;
+                    transform: traslateZ(0);
+                }
+            }
+        }
+    }
+}
+
+input.material-input[type=password] {
+    font: large Verdana, sans-serif;
+}
+
+.material-icons {
+    vertical-align: bottom;
+}
+
+a.download-button {
+    font-weight: 700;
+    color: rgba(63, 81, 181, 1);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+    &:hover {
+        color: rgba(63, 81, 181, 0.43);
+    }
+}
